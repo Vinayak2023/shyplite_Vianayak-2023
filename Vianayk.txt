@@ -1,0 +1,108 @@
+ Question 1: Create an Array from 0...100 without using traditional For-loop
+ Solutions:
+ var arr = Array.apply(null, { length: 100 }).map(function (_, i) {
+    return i + 1;
+});
+console.log( JSON.stringify(arr, 0, 4) )
+
+ Question 2: Create an Array of only even numbers from the above array
+ Solutions:
+let arr= Array.from(Array(100), (_, i) => i + 1)
+let y= arr.filter(function(element, index, array) {
+  return (index % 2 === 1);
+});
+console.log({y})
+const Square = async (v) => {
+      const x = await new Promise(function(resolve, reject){
+        if(v%2 ==0){
+         var sq= v*v
+        resolve(sq)
+        } else{
+       var reason = new Error('number is odd');
+            reject(reason); // reject
+      }
+      })
+   return x
+  }
+
+  Square(4).then(x => console.log(x) )
+        .catch(e=> console.log(e))
+ Question 3: create an array of even squares using the previous array
+  Solutions:
+ let y=[1,3,4,6,8,9,10,12,13]
+let q= y.map(x=> x*x)
+console.log(q)
+Question 4:Sum of all the squares from the above array of Even Squares
+let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const squareEven = (num) => {
+  let sum = 0;
+  for (let i = 0; i < num.length; i++) {
+    if (num[i] % 2 === 0) {
+    sum += Math.pow(num[i], 2);
+    }
+  }
+  return sum
+}
+ 
+console.log(squareEven(num));
+Question 5: Call the above square Promise function with all numbers from 0-100
+ and ensure that the errors are not thrown
+then print the following:
+ 1. Number of errors : 50
+ 2. The resultant array:array containing squares of all even numbers from 0-100
+ 3. Number of objects in the resultant array:51
+ Part-2
+ Q1: Create a template string of a button HTML Element. Save the title
+  for the button in a separate var and use it in the button correctly.
+  Solutions:
+   var x= 'shyPlite'
+   var y = `<button class="big" title=${x}>Submit</button>`;
+Q4: Create a promise that simulates a delay of 1-3s randomly. Create an array of 
+10 such promises. Only print the output when all promises have been resolved.
+const promise1 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 3, 'one');
+  });
+  const promise2 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 1, 'two');
+  });
+  const promise3 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 2, 'three');
+  });
+  const promise4 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 3, 'four');
+  });
+  const promise5 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 2, 'five');
+  });
+  const promise6 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 1, 'six');
+  });
+  const promise7 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 1, 'seven');
+  });
+  
+  const promise8 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 2, 'eight');
+  });
+  
+  const promise9 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 3, 'nine');
+  });
+  
+  const promise10 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 2, 'ten');
+  });
+  
+  let arr= [promise1, promise2,promise3,promise4,promise5,promise6,promise7, promise8, promise9, promise10]
+  
+  Promise.allSettled(arr).then((values) => {
+    console.log(values);
+  });
+ 
+ 
+ 
+ 
+ 
+ 
+        
